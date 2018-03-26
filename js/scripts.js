@@ -4,16 +4,16 @@ $(document).ready(function() {
 
     var items = ["item0","item1", "item2", "item3", "item4"];
     var userItems = [];
-
     items.forEach(function(item) {
-    var userInput = ($("#" + item).val()).toUpperCase();
-    userItems.push(userInput);
-    console.log(userItems);
+      var userInput = ($("#" + item).val()).toUpperCase();
+      userItems.push(userInput);
     });
-    //
-    // var itemsUpperCase = userItems.map(function() {
-    //   return userItems.toUpperCase();
-    //   console.log(itemsUpperCase);
-    // });
+
+    userItems.sort();
+
+    userItems.forEach(function(item) {
+      $("#output").append($("<li>" + item + "</li>"));
+    });
+    $("form").slideUp("slow");
   });
 });
